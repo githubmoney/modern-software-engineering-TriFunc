@@ -21,13 +21,31 @@ atan(1) :  0.7853981633974483
 
 '''
 # ================================================
+
 # ===========自己写实现arctan函数==================
+e = 2.718281828459045
+
+pi = 3.141592653589793
+
+tau = 6.283185307179586
 
 
+def atan(*args, **kwargs):  # real signature unknown
+    """ Return the arc tangent (measured in radians) of x. """
+    pass
 
 
+def atan2(*args, **kwargs):  # real signature unknown
+    """
+    Return the arc tangent (measured in radians) of y/x.
+
+    Unlike atan(y/x), the signs of both x and y are considered.
+    """
+    pass
 
 
+def atanh(*args, **kwargs):  # real signature unknown
+    """ Return the inverse hyperbolic tangent of x. """
+    pass
 
-
-# =================================================
+#=================================================
