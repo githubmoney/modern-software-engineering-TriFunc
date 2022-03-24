@@ -1,51 +1,42 @@
-#!/usr/bin/python
+# 泰勒展开
 
-# 调用函数math可以实现arctan函数功能，例如下所示
+print('本程序计算arcsin(x)的值.')
 
-import math
+x=float(input('请输入x:'))
 
-print ("atan(0.64) : ",  math.atan(0.64))
-print ("atan(0) : ",  math.atan(0))
-print ("atan(10) : ",  math.atan(10))
-print ("atan(-1) : ",  math.atan(-1))
-print ("atan(1) : ",  math.atan(1))
+delta=float(input('请输入delta:'))
 
-'''
-(base) lh@lh:~/文档$ python func_arctan.py
+n =0
 
-atan(0.64) :  0.5693131911006619
-atan(0) :  0.0
-atan(10) :  1.4711276743037347
-atan(-1) :  -0.7853981633974483
-atan(1) :  0.7853981633974483
+arcsinx = 0
 
-'''
-# ================================================
+ 
 
-# ===========自己写实现arctan函数==================
-e = 2.718281828459045
+def factorial(m):    #阶乘
 
-pi = 3.141592653589793
+    if m == 0:
 
-tau = 6.283185307179586
+        return 1
 
+    else:
 
-def atan(*args, **kwargs):  # real signature unknown
-    """ Return the arc tangent (measured in radians) of x. """
-    pass
+        result = 1
 
+        for i in range(2,m+1):
 
-def atan2(*args, **kwargs):  # real signature unknown
-    """
-    Return the arc tangent (measured in radians) of y/x.
+            result = result*i
 
-    Unlike atan(y/x), the signs of both x and y are considered.
-    """
-    pass
+        return result
 
+ 
 
-def atanh(*args, **kwargs):  # real signature unknown
-    """ Return the inverse hyperbolic tangent of x. """
-    pass
+while(factorial(2*n)*x**(2*n+1)/(4**n*factorial(n)*factorial(n)*(2*n+1))>=delta):
 
-#=================================================
+    arcsinx += factorial(2*n)*x**(2*n+1)/(4**n*factorial(n)*factorial(n)*(2*n+1))
+
+    n=n+1
+ 
+print('arcsinx的近似值为：',arcsinx)
+
+# arctanx..............
+
