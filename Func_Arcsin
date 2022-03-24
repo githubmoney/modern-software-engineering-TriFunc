@@ -1,15 +1,27 @@
 def Func_Arcsinx(x):
-     if x>1 and x<-1:
-         print('错误，请输入-1到1间的数')
-         return 1
+     if x>1 or x<-1:
+         #print('错误，请输入-1到1间的数')
+         return print('错误，请输入-1到1间的数')
      else:
-         arcsinx = 0
-         n = 0
-         delta = 0.000000001
-         while (factorial(2*n)*x**(2*n+1)/(4**n*factorial(n)*factorial(n)*(2*n+1)) >= delta):
-              arcsinx += factorial(2*n)*x**(2*n+1)/(4**n*factorial(n)*factorial(n)*(2*n+1))
-              n = n + 1
-         return arcsinx
+         if x>=0 and x<1:
+              arcsinx = 0
+              n = 0
+              delta = 0.000000001
+              while (factorial(2*n)*x**(2*n+1)/(4**n*factorial(n)*factorial(n)*(2*n+1)) >= delta):
+                    arcsinx += factorial(2*n)*x**(2*n+1)/(4**n*factorial(n)*factorial(n)*(2*n+1))
+                    n = n + 1
+              return format(arcsinx, '.9f')
+         else:
+              arcsinx = 0
+              n = 0
+              delta = 0.000000001
+              x=-x
+              while (factorial(2 * n) * x ** (2 * n + 1) / (4 ** n * factorial(n) * factorial(n) * (2 * n + 1)) >= delta):
+                    arcsinx += factorial(2 * n) * x ** (2 * n + 1) / (4 ** n * factorial(n) * factorial(n) * (2 * n + 1))
+                    n = n + 1
+              arcsinx = -arcsinx
+              return format(arcsinx, '.9f')
+
 def factorial(m):    #阶乘
      if m == 0:
          return 1
@@ -20,4 +32,3 @@ def factorial(m):    #阶乘
          return result
 x = float(input('请输入x:'))
 y=Func_Arcsinx(x)
-print('arcsinx的近似值为：', format(y, '.9f'))
