@@ -1,42 +1,13 @@
-# 泰勒展开
+# 泰勒展开式计算arctanx
+print("\n")
+print("==========输入ｘ的取值（|x| < 1）===============")
+print('本程序计算arctan(x)的值:')
+x = float(input('请输入x:'))
+n = 0
+arctanx = 0
+while (n < 100):
+    arctanx += (-1)**n*x**(2*n+1)/(2*n+1)
+    n = n+1
 
-print('本程序计算arcsin(x)的值.')
-
-x=float(input('请输入x:'))
-
-delta=float(input('请输入delta:'))
-
-n =0
-
-arcsinx = 0
-
- 
-
-def factorial(m):    #阶乘
-
-    if m == 0:
-
-        return 1
-
-    else:
-
-        result = 1
-
-        for i in range(2,m+1):
-
-            result = result*i
-
-        return result
-
- 
-
-while(factorial(2*n)*x**(2*n+1)/(4**n*factorial(n)*factorial(n)*(2*n+1))>=delta):
-
-    arcsinx += factorial(2*n)*x**(2*n+1)/(4**n*factorial(n)*factorial(n)*(2*n+1))
-
-    n=n+1
- 
-print('arcsinx的近似值为：',arcsinx)
-
-# arctanx..............
-
+arctanx = format(arctanx, '.9f')
+print('arcsinx的近似值为：', arctanx)
