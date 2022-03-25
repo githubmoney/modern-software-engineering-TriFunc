@@ -30,3 +30,6 @@
 `Func_`加上各自对应的函数名称`首字母大写`,如`Func_Sin`
 
 
+## display branch
+对应整个显示模块,使用PyQt进行开发
+
