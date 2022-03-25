@@ -1,5 +1,7 @@
 import sys
 import Func_Sin
+import Func_Arctan
+import Func_Angle2Radian
 #from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from PyQt5 import QtWidgets
 from TriFunCal1_0 import Ui_MainWindow
@@ -11,24 +13,127 @@ class myWindow(Ui_MainWindow, QtWidgets.QMainWindow):
         super(myWindow, self).__init__()
         self.setupUi(self)
 
+    #异常提醒窗口
+    def messageDialog(self):
+        msg_box = QtWidgets.QMessageBox(QtWidgets.QMessageBox.Warning,
+                                        '警告',
+                                        '输入异常，请重新输入需要计算的数值！')
+        msg_box.exec_()
 
+    #sin函数
     def sin(self):
-        temp = self.output.text()
-        try:
-            temp = float(temp)
-        except:
-            self.output.setText('invalid syntax, check your input!')
+        input_angle  = self.input_Angle.text()
+        input_radian = self.input_Radian.text()
+        output_angle_Dis = ''
+        output_radian_Dis = ''
+        #当用户输入角度值
+        if(input_angle != ''):
+            #异常处理：若用户输入不合法则弹出警告窗口
+            try:
+                input_angle = float(input_angle)
+            except:
+                self.input_Angle.setText('')
+                self.messageDialog()
+            #当用户输入合法时执行
+            if(isinstance(input_angle, float)):
+                input_angle_copy = input_angle
+                input_angle = Func_Angle2Radian.Angle2Radian(input_angle)
+                output_angle = Func_Sin.sin(input_angle)
+                output_angle = str(format(output_angle, '.9f'))
+                output_angle_Dis = 'sin' + '(' + str(input_angle_copy) + ')' + '°' + '= ' + output_angle
+        #当用户输入弧度值
+        if(input_radian != ''):
+            try:
+                input_radian = float(input_radian)
+            except:
+                self.input_Radian.setText('')
+                self.messageDialog()
+            # 当用户输入合法时执行
+            if (isinstance(input_radian, float)):
+                input_radian_copy = input_radian
+                output_radian = Func_Sin.sin(input_radian)
+                output_radian = str(format(output_radian, '.9f'))
+                output_radian_Dis = 'sin' + '(' + str(input_radian_copy) + ')'  + '= ' + output_radian
+        #对计算的角度及弧度正弦值进行显示
+        self.output.setText(output_angle_Dis + '\t' + output_radian_Dis)
 
-        output_temp = Func_Sin.sinx(temp)
-        output_temp = str(output_temp)
-        self.input.setText(output_temp)
+    #cos函数
+    def cos(self):
+        input_angle  = self.input_Angle.text()
+        input_radian = self.input_Radian.text()
+        output_angle_dis = ''
+        output_radian_dis = ''
+        #当用户输入角度值
+        if(input_angle != ''):
+            #异常处理：若用户输入不合法则弹出警告窗口
+            try:
+                input_angle = float(input_angle)
+            except:
+                self.input_Angle.setText('')
+                self.messageDialog()
+            #当用户输入合法时执行
+            if(isinstance(input_angle, float)):
+                input_angle_copy = input_angle
+                input_angle = Func_Angle2Radian.Angle2Radian(input_angle)
+                output_angle = Func_Sin.cos(input_angle)
+                output_angle = str(format(output_angle, '.9f'))
+                output_angle_dis = 'cos' + '(' + str(input_angle_copy) + ')' + '°' + '= ' + output_angle
+        #当用户输入弧度值
+        if(input_radian != ''):
+            try:
+                input_radian = float(input_radian)
+            except:
+                self.input_Radian.setText('')
+                self.messageDialog()
+            # 当用户输入合法时执行
+            if (isinstance(input_radian, float)):
+                input_radian_copy = input_radian
+                output_radian = Func_Sin.cos(input_radian)
+                output_radian = str(format(output_radian, '.9f'))
+                output_radian_dis = 'cos' + '(' + str(input_radian_copy) + ')'  + '= ' + output_radian
+        #对计算的角度及弧度正弦值进行显示
+        self.output.setText(output_angle_dis + '\t' + output_radian_dis)
+
+    #arctan函数
+    def arctan(self):
+        input = self.input_Angle.text()
+        try:
+            input = float(input)
+        except:
+            self.input_Radian.setText('')
+            self.messageDialog()
+        if (isinstance(input, float)):
+            input_copy = input
+            output_temp = Func_Arctan.arctan(input)
+            output_temp = str(format(output_temp, '.9f'))
+            output_temp_dis = 'arctan' + '(' + str(input_copy) +')' + '= ' + output_temp
+            self.output.setText(output_temp_dis)
+
+    #ce按键
+    def ce(self):
+        self.input_Angle.clear()
+        self.input_Radian.clear()
+
+    #clear按键
+    def clear(self):
+        self.input_Angle.clear()
+        self.input_Radian.clear()
+        self.output.clear()
+
+
+
 
 
 if __name__ =='__main__':
     app = QtWidgets.QApplication(sys.argv)
     w = myWindow()
 
+    #按键事件
     w.pushButton_sin.clicked.connect(w.sin)
+    w.pushButton_cos.clicked.connect(w.cos)
+    w.pushButton_arctan.clicked.connect(w.arctan)
+    w.pushButton_ce.clicked.connect(w.ce)
+    w.pushButton_clear.clicked.connect(w.clear)
 
     w.show()
     sys.exit(app.exec_())
