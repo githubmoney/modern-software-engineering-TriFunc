@@ -1,5 +1,5 @@
 from math import pi
-from math import atan
+# from math import atan
 
 
 def arctan(input):
@@ -37,7 +37,7 @@ def arctan(input):
 
 x = float(input('请输入x:'))
 print("自定义函数输出结果：", arctan(x))
-print("库函数输出结果：", atan(x))
+# print("库函数输出结果：", atan(x))  # 库函数测试输出结果
 
 
 
