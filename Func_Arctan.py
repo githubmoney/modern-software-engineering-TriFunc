@@ -7,7 +7,7 @@ def arctan(input):
     delta = 0.000000001
     n = 0
     y = 0
-    # 当x绝对值小于1时用泰勒展开进行计算
+    # 当 x = -1 或者　x = 1 时用泰勒展开进行计算
     if (input == -1) | (input == 1):
         t = input
         n = 0
