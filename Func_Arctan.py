@@ -1,4 +1,5 @@
 # Func_Arctanx函数实现：
+
 import random
 import math
 pi = 3.141592653
@@ -12,6 +13,19 @@ def arctan(in1):
     # 当x绝对值小于1时用泰勒展开进行计算
     if (in1 == -1) | (in1 == 1):
         t = in1
+
+pi = 3.141592653
+
+
+def arctan(input):
+    x1 = input
+    delta = 0.000000001
+    n = 0
+    y = 0
+    # 当 x = -1 或者　x = 1 时用泰勒展开进行计算
+    if (input == -1) | (input == 1):
+        t = input
+
         n = 0
         m = 0
         while n < 100:
@@ -45,6 +59,7 @@ def arctan(in1):
             n += 1
         y = pi / 2 - y
         y = -y
+
     #return format(y, '.9f')
     return y
 
@@ -88,4 +103,11 @@ for i in range(1, 100):
 
 
 
+
+
+    return format(y, '.9f')
+
+
+x = float(input('请输入x:'))
+print("自定义函数输出结果：", arctan(x))
 
