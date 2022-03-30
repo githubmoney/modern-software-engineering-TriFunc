@@ -30,6 +30,9 @@
 `Func_`加上各自对应的函数名称`首字母大写`,如`Func_Sin`
 
 
+Angle2Radian
+## 角度转弧度函数
+
 
 
 # display branch
@@ -37,3 +40,4 @@
 
 # Func_Arcsin
 arcsin函数计算模块
+
