@@ -10,7 +10,6 @@ def arctan(in1):
     y = 0
     # 当 |x| <= 1时用泰勒展开进行计算
     if (in1 == -1) | (in1 == 1):
-
         t = in1
 #         n = 0
 #         m = 0
@@ -20,15 +19,13 @@ def arctan(in1):
         # result = m * 180 / pi # 可以转角度
         # w = format(result, '.9f') # 转角度输出
         return y
-    if (in1 >= 0) and (in1 < 1):
-
+    elif (in1 >= 0) and (in1 < 1):
         while n < 1000000000:
             y += (-1) ** n * in1 ** (2 * n + 1) / (2 * n + 1)
             n = n + 1
         # result = m * 180 / pi # 可以转角度
         # w = format(result, '.9f') # 转角度输出
     elif (in1 >= 0) and (in1 < 1):
-
         while in1 ** (2 * n + 1) / (2 * n + 1) >= delta:
             y += (-1) ** n * in1 ** (2 * n + 1) / (2 * n + 1)
             n += 1
