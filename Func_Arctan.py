@@ -10,8 +10,8 @@ def arctan(in1):
     n = 0
     y = 0
     # 当x绝对值小于1时用泰勒展开进行计算
-    if (in1 == -1) | (in1 == 1):
-        t = in1
+    if (x1 == -1) | (x1 == 1):
+        t = x1
         n = 0
         m = 0
         while n < 100:
@@ -23,7 +23,7 @@ def arctan(in1):
         return m
     if (x1 >= 0) and (x1 < 1):
         while x1 ** (2 * n + 1) / (2 * n + 1) >= delta:
-            y += (-1) ** n * x ** (2 * n + 1) / (2 * n + 1)
+            y += (-1) ** n * x1 ** (2 * n + 1) / (2 * n + 1)
             n += 1
     elif (x1 <= 0) and (x1 > -1):
         x2 = -x1
@@ -32,7 +32,7 @@ def arctan(in1):
             n += 1
         y = -y
     # 当x绝对值大于1时，arctanx=pi/2-arctan(1/x)
-    elif x > 1:
+    elif x1 > 1:
         x3 = 1 / x1
         while x3 ** (2 * n + 1) / (2 * n + 1) >= delta:
             y += (-1) ** n * x3 ** (2 * n + 1) / (2 * n + 1)
@@ -53,17 +53,6 @@ def ku(in2):
 
     return format(math.atan(in2), '.9f')
 
-# x = float(input('请输入x:'))
-"""def testarctan(w):
-    x = random.randint(0, 10)
-    for i in range(10):
-        y1 = print("自定义函数输出结果：", arctan(x))
-
-        y2 = print("导入库函数后的：", format(math.atan(x), '.9f'))
-
-    m = y2 - y1
-    print(m)"""
-
 
 def test(angle):
 
@@ -83,9 +72,4 @@ for i in range(1, 100):
     if ans > 0.0001:
         flag = False
     print('input : %.5f' % x, "minus", '%.9f' % ans, flag)
-
-
-
-
-
 
