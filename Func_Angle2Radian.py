@@ -9,7 +9,7 @@ def angle2radian(angel):
 
 
 '''
-# 测试代码
+# 测试函数
 def test(angle):
     my_angel2radian = angle2radian(angle)
     system_angel2radian = math.radians(angle)
