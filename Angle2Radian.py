@@ -25,18 +25,18 @@ print("角度计算结果：", angel_output)
 print("库函数计算结果：", math.degrees(radian_input))"""
 
 
-def test(angle):
-    myAngel2radian = angel2radian(angle)
-    systemmyAngel2radian = math.radians(angle)
-    minus = systemmyAngel2radian - myAngel2radian
+# def test(angle):
+#     myAngel2radian = angel2radian(angle)
+#     systemmyAngel2radian = math.radians(angle)
+#     minus = systemmyAngel2radian - myAngel2radian
 
-    return minus
+#     return minus
 
 
-for i in range(1, 100):
-    x = random.uniform(-10000, 10000)
-    ans = test(x)
-    flag = True
-    if ans > 0.001:
-        flag = False
-    print('input : %.5f' % x, "minus", '%.9f' % ans, flag)
+# for i in range(1, 100):
+#     x = random.uniform(-10000, 10000)
+#     ans = test(x)
+#     flag = True
+#     if ans > 0.001:
+#         flag = False
+#     print('input : %.5f' % x, "minus", '%.9f' % ans, flag)
