@@ -41,9 +41,9 @@ Angle2Radian
 ## 角度转弧度函数
 
 
-
-# display branch
-对应整个显示模块,使用PyQt进行开发
+## display branch
+* 对应整个显示模块,使用PyQt进行开发
+* ![image](https://user-images.githubusercontent.com/57553584/160834662-907762d2-21c2-4842-a074-d413037c45d0.png)
 
 # Func_Arcsin
 
