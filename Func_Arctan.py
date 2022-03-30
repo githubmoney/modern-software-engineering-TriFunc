@@ -47,20 +47,21 @@ def arctan(in1):
     return y
 
 
-def test(angle):
-    myArctan = arctan(angle)
-    systemArctan = math.atan(angle)
-    print(myArctan)
-    print(systemArctan)
-    minus = systemArctan - myArctan
+# 测试代码
+# def test(angle):
+#     myArctan = arctan(angle)
+#     systemArctan = math.atan(angle)
+#     print(myArctan)
+#     print(systemArctan)
+#     minus = systemArctan - myArctan
 
-    return minus
+#     return minus
 
 
-for i in range(1, 100):
-    x = random.uniform(-10000, 10000)
-    ans = test(x)
-    flag = True
-    if ans > 0.001:
-        flag = False
-    print('input : %.5f' % x, "minus", '%.9f' % ans, flag)
+# for i in range(1, 100):
+#     x = random.uniform(-10000, 10000)
+#     ans = test(x)
+#     flag = True
+#     if ans > 0.001:
+#         flag = False
+#     print('input : %.5f' % x, "minus", '%.9f' % ans, flag)
