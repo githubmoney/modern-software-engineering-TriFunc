@@ -1,6 +1,6 @@
 # Func_Arctanx函数实现：
-import random
-import math
+# import random
+# import math
 pi = 3.141592653
 
 
@@ -8,18 +8,14 @@ def arctan(in1):
     delta = 0.000000001
     n = 0
     y = 0
-    # 当 |x| = 1时用泰勒展开进行计算
+    # 当 |x| <= 1时用泰勒展开进行计算
     if (in1 == -1) | (in1 == 1):
-        t = in1
-        n = 0
-        m = 0
         while n < 1000000000:
-            m += (-1) ** n * t ** (2 * n + 1) / (2 * n + 1)
+            y += (-1) ** n * in1 ** (2 * n + 1) / (2 * n + 1)
             n = n + 1
         # result = m * 180 / pi # 可以转角度
         # w = format(result, '.9f') # 转角度输出
-        return m
-    if (in1 >= 0) and (in1 < 1):
+    elif (in1 >= 0) and (in1 < 1):
         while in1 ** (2 * n + 1) / (2 * n + 1) >= delta:
             y += (-1) ** n * in1 ** (2 * n + 1) / (2 * n + 1)
             n += 1
@@ -47,7 +43,7 @@ def arctan(in1):
     return y
 
 
-# 测试代码
+# 测试函数
 # def test(angle):
 #     myArctan = arctan(angle)
 #     systemArctan = math.atan(angle)
