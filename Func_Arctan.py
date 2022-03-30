@@ -1,19 +1,27 @@
 # Func_Arctanx函数实现：
+import random
+import math
 pi = 3.141592653
 
 
-def arctan(input):
-    x1 = input
+def arctan(in1):
+    x1 = in1
     delta = 0.000000001
     n = 0
     y = 0
-    # 当 x = -1 或者 x = 1时用泰勒展开进行计算
-    if (x1 == -1) | (x1 == 1):
-        while n < 100000:
-            m += (-1) ** n * x1 ** (2 * n + 1) / (2 * n + 1)
-            n = n + 1
     # 当x绝对值小于1时用泰勒展开进行计算
-    elif (x1 >= 0) and (x1 < 1):
+    if (in1 == -1) | (in1 == 1):
+        t = in1
+        n = 0
+        m = 0
+        while n < 100:
+            m += (-1) ** n * t ** (2 * n + 1) / (2 * n + 1)
+            n = n + 1
+        # result = m * 180 / pi # 可以转角度
+        m = format(m, '.9f')
+        # w = format(result, '.9f') # 转角度输出
+        return m
+    if (x1 >= 0) and (x1 < 1):
         while x1 ** (2 * n + 1) / (2 * n + 1) >= delta:
             y += (-1) ** n * x ** (2 * n + 1) / (2 * n + 1)
             n += 1
@@ -37,8 +45,47 @@ def arctan(input):
             n += 1
         y = pi / 2 - y
         y = -y
-    return format(y, '.9f')
+    #return format(y, '.9f')
+    return y
 
 
-x = float(input('请输入x:'))
-print("自定义函数输出结果：", arctan(x))
+def ku(in2):
+
+    return format(math.atan(in2), '.9f')
+
+# x = float(input('请输入x:'))
+"""def testarctan(w):
+    x = random.randint(0, 10)
+    for i in range(10):
+        y1 = print("自定义函数输出结果：", arctan(x))
+
+        y2 = print("导入库函数后的：", format(math.atan(x), '.9f'))
+
+    m = y2 - y1
+    print(m)"""
+
+
+def test(angle):
+
+    myArctan = arctan(angle)
+    systemArctan = math.atan(angle)
+    print(myArctan)
+    print(systemArctan)
+    minus = systemArctan - myArctan
+
+    return minus
+
+
+for i in range(1, 100):
+    x = random.uniform(-10000, 10000)
+    ans = test(x)
+    flag = True
+    if ans > 0.0001:
+        flag = False
+    print('input : %.5f' % x, "minus", '%.9f' % ans, flag)
+
+
+
+
+
+
