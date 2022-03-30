@@ -30,4 +30,14 @@
 `Func_`加上各自对应的函数名称`首字母大写`,如`Func_Sin`
 
 
+Angle2Radian
 ## 角度转弧度函数
+
+
+
+# display branch
+对应整个显示模块,使用PyQt进行开发
+
+# Func_Arcsin
+arcsin函数计算模块
+
