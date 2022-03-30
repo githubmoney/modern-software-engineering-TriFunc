@@ -1,4 +1,5 @@
 import math
+import random
 pi = 3.1415926535897932
 angle =          [pi/4,pi/8,pi/16,
                   pi/32,pi/64,pi/128,
@@ -12,7 +13,7 @@ tang =        [1,0.4142135623731,0.19891236737966,
                0.0015339819910887,0.00076699054434309,
                0.00038349521577144,0.00019174760083571]
 
-def sinx(a):
+def sin(a):  #a是弧度
     #把a的范围取到0-2pi
     if a <= (pi/16384):
         return a
@@ -41,24 +42,22 @@ def sinx(a):
             return -(y/math.sqrt((x*x+y*y)))
         else:
             return (y/math.sqrt((x*x+y*y)))
-            
-         ans = sinx(3.14)
-  
-         print(ans)
-
-  def test(angle):
-    mySin = Func_Sin(angle)
-    systemCos = format(math.sin(angle), '.9f')
-
-    minus = float(systemSin) - float(mySin)
-
-    return minus
 
 
-  for i in range(1, 100):
-    t = random.uniform(0, 100)
-    ans = test(t)
-    flag = True
-    if ans > 0.001:
-        flag = False
-    print('input : %.5f' % t, "minus", '%.5f' % ans, flag)
+
+# def test(angle):
+#     mySin = sin(angle)           
+#     systemSin = math.sin(angle)  
+#
+#     minus = systemSin - mySin    
+#
+#     return minus
+
+
+# for i in range(100):
+#     angleIn = random.uniform(0, 100) 
+#     ans = test(angleIn)              
+#     flag = True
+#     if ans > 0.001:
+#         flag = False
+#     print('input: %.5f' %angleIn, "minus:", '%.5f' %ans, flag)
