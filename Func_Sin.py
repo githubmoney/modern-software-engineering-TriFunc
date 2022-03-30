@@ -1,6 +1,5 @@
 import math
 import random
-
 pi = 3.1415926535897932
 angle =          [pi/4,pi/8,pi/16,
                   pi/32,pi/64,pi/128,
@@ -14,13 +13,12 @@ tang =        [1,0.4142135623731,0.19891236737966,
                0.0015339819910887,0.00076699054434309,
                0.00038349521577144,0.00019174760083571]
 
-def cos(a):
+def sin(a):  #a是弧度
     #把a的范围取到0-2pi
     if a <= (pi/16384):
-        return 1-a
+        return a
     else:
-        #negitive = a < 0
-        negitive = a > pi/2
+        negitive = a < 0
         x = 10
         y = 0
         theta = 0
@@ -33,32 +31,33 @@ def cos(a):
                 theta += angle[i]
             if(theta == a):
                 if(negitive):
-                    return (x/math.sqrt((x*x+y*y)))
+                    return -(y/math.sqrt((x*x+y*y)))
                 else:
-                    return -(x/math.sqrt((x*x+y*y)))
+                    return (y/math.sqrt((x*x+y*y)))
             else:
                 theta -= angle[i]
                 x = orix
                 y = oriy
         if(negitive):
-            return x/math.sqrt((x*x+y*y))
+            return -(y/math.sqrt((x*x+y*y)))
         else:
-            return -(x/math.sqrt((x*x+y*y)))
+            return (y/math.sqrt((x*x+y*y)))
+
 
 
 # def test(angle):
-#     myCos = Func_Cos(angle)
-#     systemCos = format(math.cos(angle), '.9f')
+#     mySin = sin(angle)           
+#     systemSin = math.sin(angle)  
 #
-#     minus = float(systemCos) - float(myCos)
+#     minus = systemSin - mySin    
 #
 #     return minus
-#
-#
-# for i in range(1, 100):
-#     t = random.uniform(0, 100)
-#     ans = test(t)
+
+
+# for i in range(100):
+#     angleIn = random.uniform(0, 100) 
+#     ans = test(angleIn)              
 #     flag = True
 #     if ans > 0.001:
 #         flag = False
-#     print('input : %.5f' % t, "minus", '%.5f' % ans, flag)
+#     print('input: %.5f' %angleIn, "minus:", '%.5f' %ans, flag)
