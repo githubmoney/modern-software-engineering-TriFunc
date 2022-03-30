@@ -45,6 +45,7 @@ Angle2Radian
   * 输入范围从-1到1
   * 精度范围为小数点后九位
 
-arcsin函数计算模块
+# arcsin函数计算模块测试结果
+![1648643010(1)](https://user-images.githubusercontent.com/101335052/160833494-2e083cb4-7c97-41ab-8f5e-c7f8c4571534.png)
 
 
