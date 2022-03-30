@@ -8,4 +8,5 @@
 单调性：[-1,1]单调递增
 
 # arcsin函数测试结果
+![1648642691(1)](https://user-images.githubusercontent.com/101335052/160832775-037f27ba-2565-49ef-a99b-8519514c1b1d.png)
 
