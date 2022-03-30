@@ -53,7 +53,7 @@ Angle2Radian
   * 精度范围为小数点后九位
 
 # arcsin函数计算模块测试结果
-![1648642562(1)](https://user-images.githubusercontent.com/101335052/160832294-d8a499d4-a182-4ad9-943d-8ef99f1b0ce7.png)
+![1648643010(1)](https://user-images.githubusercontent.com/101335052/160833494-2e083cb4-7c97-41ab-8f5e-c7f8c4571534.png)
 
 
 
