@@ -1,4 +1,5 @@
 import math
+import random
 
 pi = 3.1415926535897932
 angle =          [pi/4,pi/8,pi/16,
@@ -45,5 +46,19 @@ def Func_Cos(a):
             return format(-(x/math.sqrt((x*x+y*y))), '.9f')
 
 
-cos_in = float(input('cos_in = '))
-print("cos_out = ", Func_Cos(cos_in))
+def test(angle):
+    myCos = Func_Cos(angle)
+    systemCos = format(math.cos(angle), '.9f')
+
+    minus = float(systemCos) - float(myCos)
+
+    return minus
+
+
+for i in range(1, 100):
+    t = random.uniform(0, 100)
+    ans = test(t)
+    flag = True
+    if ans > 0.001:
+        flag = False
+    print('input : %.5f' % t, "minus", '%.5f' % ans, flag)
