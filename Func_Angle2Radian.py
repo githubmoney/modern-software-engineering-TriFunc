@@ -8,6 +8,7 @@ def angle2radian(angel):
     return radian
 
 
+'''
 # 测试代码
 def test(angle):
     my_angel2radian = angle2radian(angle)
@@ -24,3 +25,4 @@ for i in range(1, 100):
     if ans > 0.001:
         flag = False
     print('input : %.5f' % x, "误差", '%.9f' % ans, flag)
+'''
