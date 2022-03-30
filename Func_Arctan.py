@@ -66,6 +66,6 @@ for i in range(1, 100):
     x = random.uniform(-10000, 10000)
     ans = test(x)
     flag = True
-    if ans > 0.0001:
+    if ans > 0.001:
         flag = False
     print('input : %.5f' % x, "minus", '%.9f' % ans, flag)
