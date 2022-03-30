@@ -46,20 +46,19 @@ def sinx(a):
   
          print(ans)
 
-def test(angle):
-    myArctan = arctan(angle)
-    systemArctan = math.atan(angle)
-    print(myArctan)
-    print(systemArctan)
-    minus = systemArctan - myArctan
+  def test(angle):
+    mySin = Func_Sin(angle)
+    systemCos = format(math.sin(angle), '.9f')
+
+    minus = float(systemSin) - float(mySin)
 
     return minus
 
 
-for i in range(1, 100):
-    x = random.uniform(-10000, 10000)
-    ans = test(x)
+  for i in range(1, 100):
+    t = random.uniform(0, 100)
+    ans = test(t)
     flag = True
     if ans > 0.001:
         flag = False
-    print('input : %.5f' % x, "minus", '%.9f' % ans, flag)
+    print('input : %.5f' % t, "minus", '%.5f' % ans, flag)
