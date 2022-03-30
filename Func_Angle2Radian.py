@@ -1,10 +1,11 @@
-import math
-import random
+# import math
+# import random
+from math import pi
 
 
 # 角度转弧度函数
 def angle2radian(angel):
-    radian = angel * math.pi / 180
+    radian = angel * pi / 180
     return radian
 
 
