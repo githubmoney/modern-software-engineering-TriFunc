@@ -5,6 +5,7 @@ import Func_Angle2Radian
 #from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
 from PyQt5 import QtWidgets
 from TriFunCal1_0 import Ui_MainWindow
+import math
 
 
 
@@ -96,23 +97,67 @@ class myWindow(Ui_MainWindow, QtWidgets.QMainWindow):
 
     #arctan函数
     def arctan(self):
-        input = self.input_Angle.text()
-        try:
-            input = float(input)
-        except:
-            self.input_Radian.setText('')
-            self.messageDialog()
-        if (isinstance(input, float)):
-            input_copy = input
-            output_temp = Func_Arctan.arctan(input)
-            output_temp = str(format(output_temp, '.9f'))
-            output_temp_dis = 'arctan' + '(' + str(input_copy) +')' + '= ' + output_temp
-            self.output.setText(output_temp_dis)
+        input_angle = self.input_Angle.text()
+        if (input_angle != ''):
+            input = self.input_Angle.text()
+            try:
+                input = float(input)
+            except:
+                self.input_Angle.setText('')
+                self.messageDialog()
+            if (isinstance(input, float)):
+                input_copy = input
+                output_temp = Func_Arctan.arctan(input)
+                output_temp = str(format(output_temp, '.9f'))
+                output_temp_dis = 'arctan' + '(' + str(input_copy) +')' + '= ' + output_temp
+                self.output.setText(output_temp_dis)
 
-    #ce按键
-    def ce(self):
-        self.input_Angle.clear()
-        self.input_Radian.clear()
+    #ce按键 改为 test按键
+    def test(self):
+        # self.input_Angle.clear()
+        # self.input_Radian.clear()
+
+
+        input_angle = self.input_Angle.text()
+        test_dis_sin = ''
+        #test_dis_arcsin = ''
+        test_dis_arctan = ''
+        #test_dis_cos = ''
+
+        # 当用户输入角度值
+        if (input_angle != ''):
+            # 异常处理：若用户输入不合法则弹出警告窗口
+            try:
+                input_angle = float(input_angle)
+            except:
+                self.input_Angle.setText('')
+                self.messageDialog()
+            # 当用户输入合法时执行
+            if (isinstance(input_angle, float)):
+                sinMinus = math.sin(input_angle) - Func_Sin.sin(input_angle)
+                arctanMinus = math.atan(input_angle) - Func_Arctan.arctan(input_angle)
+                #arcsinMinus = math.asin(input_angle) - Func_Arcsin.arcsin(input_angle)
+                #cosMinus = math.cos(input_angle) - Func_Cos.cos(input_angle)
+                if(abs(sinMinus) > 0.001):
+                    test_dis_sin = 'sin函数未通过测试！'
+                else:
+                    test_dis_sin = 'sin函数通过测试！'
+                # if (abs(cosMinus) > 0.001):
+                #     test_dis_cos = 'cos函数未通过测试！'
+                # else:
+                #     test_dis_cos = 'cos函数通过测试！'
+                if (abs(arctanMinus) > 0.001):
+                    test_dis_arctan = 'arctan函数未通过测试！'
+                else:
+                    test_dis_arctan = 'arctan函数通过测试！'
+                # if (abs(arcsinMinus) > 0.001):
+                #     test_dis_arcsin = 'arcsin函数未通过测试！'
+                # else:
+                #     test_dis_arcsin = 'arcsin函数通过测试！'
+
+                self.output.setText(test_dis_sin + 'test_dis_cos' + 'test_dis_arcsin' + test_dis_arctan)
+
+
 
     #clear按键
     def clear(self):
@@ -132,7 +177,7 @@ if __name__ =='__main__':
     w.pushButton_sin.clicked.connect(w.sin)
     w.pushButton_cos.clicked.connect(w.cos)
     w.pushButton_arctan.clicked.connect(w.arctan)
-    w.pushButton_ce.clicked.connect(w.ce)
+    w.pushButton_test.clicked.connect(w.test)
     w.pushButton_clear.clicked.connect(w.clear)
 
     w.show()
