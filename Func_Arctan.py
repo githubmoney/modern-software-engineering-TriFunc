@@ -13,7 +13,7 @@ def arctan(in1):
         t = in1
         n = 0
         m = 0
-        while n < 100:
+        while n < 1000000000:
             m += (-1) ** n * t ** (2 * n + 1) / (2 * n + 1)
             n = n + 1
         # result = m * 180 / pi # 可以转角度
