@@ -28,8 +28,6 @@ print("库函数计算结果：", math.degrees(radian_input))"""
 def test(angle):
     myAngel2radian = angel2radian(angle)
     systemmyAngel2radian = math.radians(angle)
-    print(myAngel2radian)
-    print(systemmyAngel2radian)
     minus = systemmyAngel2radian - myAngel2radian
 
     return minus
