@@ -45,14 +45,18 @@
 * 对应整个显示模块,使用PyQt进行开发
 * ![image](https://user-images.githubusercontent.com/57553584/160834662-907762d2-21c2-4842-a074-d413037c45d0.png)
 
-# Func_Arcsin
+## Func_Arcsin
 
-# arcsin函数计算模块
+### Arcsin函数计算模块
   * 使用泰勒级数展开逼近
   * 输入范围从-1到1
   * 精度范围为小数点后九位
-
-# arcsin函数计算模块测试结果
+  * 定义域：[-1,1]
+  * 值 域：[-π/2,π/2]
+  * 奇偶性：奇函数
+  * 周期性：不是周期函数
+  * 单调性：[-1,1]单调递增
+### Arcsin函数计算模块测试结果
 ![1648643010(1)](https://user-images.githubusercontent.com/101335052/160833494-2e083cb4-7c97-41ab-8f5e-c7f8c4571534.png)
 
 ## Func_Arctan
