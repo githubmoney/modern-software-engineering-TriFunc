@@ -38,7 +38,7 @@
   * 函数命名为`angle2radian`；参数为angle，即输入的角度值
   * 弧度(radian)=角度(angle)*π(pi)/180
   * 根据公式计算得到转换后的弧度值，返回该弧度值
-  * 模块测试结果如下图：
+  * 函数的部分测试结果如下图：
   * ![image](https://user-images.githubusercontent.com/97205517/161005980-9abab8d9-e1da-4e40-b730-0b026ad0ec05.png)
 
 ## Display
