@@ -48,6 +48,16 @@
 * ![image](https://user-images.githubusercontent.com/57553584/160834662-907762d2-21c2-4842-a074-d413037c45d0.png)
 
 
+## sin函数计算模块
+* 测试结果
+* ![image](https://user-images.githubusercontent.com/57553584/161010282-e7fcc91f-1e0c-4112-af6f-b06c267be64a.png)
+
+
+## cos函数计算模块
+* 测试结果
+* ![image](https://user-images.githubusercontent.com/57553584/161010402-b31ba88d-2573-4db8-8a26-1bb4d9049ed2.png)
+
+
 ## arcsin函数计算模块
 * 使用泰勒级数展开逼近
 * 输入范围从-1到1
