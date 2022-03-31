@@ -35,17 +35,17 @@
 * 测试模块不单独编写函数进行实现，而是采用在各函数内部进行测试的方式，通过在`循环内生成随机数`并各自计算 `编写的函数值`与`python提供的内置方法`所计算的函数值进行`减法运算`，通过事先确定的`阈值`与`差值`进行比较来确定编写的函数是否正确及可用。用户可通过在界面上输入`想要测试的值`并通过`test`按钮进行相关测试，测试结果将输出到界面上。
 
 
+## Display
+* 对应整个显示模块,使用PyQt进行开发
+* ![image](https://user-images.githubusercontent.com/57553584/160834662-907762d2-21c2-4842-a074-d413037c45d0.png)
+
+
 ## 角度转弧度函数
 * 函数命名为`angle2radian`；参数为angle，即输入的角度值
 * 弧度(radian)=角度(angle)*π(pi)/180
 * 根据公式计算得到转换后的弧度值，返回该弧度值
 * 函数的部分测试结果如下图：
 * ![image](https://user-images.githubusercontent.com/97205517/161005980-9abab8d9-e1da-4e40-b730-0b026ad0ec05.png)
-
-
-## Display
-* 对应整个显示模块,使用PyQt进行开发
-* ![image](https://user-images.githubusercontent.com/57553584/160834662-907762d2-21c2-4842-a074-d413037c45d0.png)
 
 
 ## sin函数计算模块
