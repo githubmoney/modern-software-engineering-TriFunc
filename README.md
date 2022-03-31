@@ -55,5 +55,18 @@
 # arcsin函数计算模块测试结果
 ![1648643010(1)](https://user-images.githubusercontent.com/101335052/160833494-2e083cb4-7c97-41ab-8f5e-c7f8c4571534.png)
 
+## Func_Arctan
 
+### arctan函数计算模块
+  * 使用泰勒级数展开逼近
+  * arctan函数是正切函数y=tanx在开区间（x∈(-π/2,π/2)）的反函数，记作y=arctanx 或 y=tan-1x，叫做反正切函数。它表示(-π/2,π/2)上正切值等于 x 的那个唯一确定的角，即tan(arctan x)=x;
+  * 反正切函数的定义域为R即(-∞，+∞);
+  * 值 域：(-π/2,π/2);
+  * 函数实现思想是通过泰勒公式展开，在一定的取值范围内进行收敛;
+  * 结果保留小数点后９位;
+  * 测试函数予以验证是否满足精度要求(满足要求返回值为True,否则为False).
+  * 测试结果：
+  * ![arctan](https://user-images.githubusercontent.com/101334907/161008237-31feb11b-7a63-4c36-952c-3f18b076a3b2.png)
+
+  
 
