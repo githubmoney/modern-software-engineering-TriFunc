@@ -46,7 +46,7 @@
 * 弧度(radian)=角度(angle)*π(pi)/180
 * 根据公式计算得到转换后的弧度值，返回该弧度值
 * 函数的部分测试结果如下图：
-* ![image](https://user-images.githubusercontent.com/97205517/161011698-27514a56-fa03-4b9e-ab2e-da29a3f7845b.png)
+* ![image](https://user-images.githubusercontent.com/97205517/161012380-5a3e996f-ae68-444f-87c2-6b688e27d814.png)
 
 
 ## sin函数计算模块
