@@ -15,11 +15,11 @@ tang =        [1,0.4142135623731,0.19891236737966,
                0.00038349521577144,0.00019174760083571]
 
 def cos(a):
-    #把a的范围取到0-2pi
-    if a <= (pi/16384):
-        return 1-a
+    if abs(a) <= (pi/16384):
+        return 1 - abs(a)
     else:
-        #negitive = a < 0
+        if(a < 0):
+            a = -a
         negitive = a > pi/2
         x = 10
         y = 0
@@ -47,7 +47,7 @@ def cos(a):
 
 
 # def test(angle):
-#     myCos = Func_Cos(angle)
+#     myCos = cos(angle)
 #     systemCos = format(math.cos(angle), '.9f')
 #
 #     minus = float(systemCos) - float(myCos)
@@ -56,7 +56,7 @@ def cos(a):
 #
 #
 # for i in range(1, 100):
-#     t = random.uniform(0, 100)
+#     t = random.uniform(-100, 100)
 #     ans = test(t)
 #     flag = True
 #     if ans > 0.001:
