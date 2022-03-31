@@ -14,13 +14,16 @@ tang =        [1,0.4142135623731,0.19891236737966,
                0.00038349521577144,0.00019174760083571]
 
 def sin(a):  #a是弧度
-    #把a的范围取到0-2pi
-    if a <= (pi/16384):
+    if abs(a) <= (pi/16384):
         return a
     else:
         negitive = a < 0
+        if(a < 0):
+            a = -a
         x = 10
         y = 0
+        # orix = 1
+        # oriy = 1
         theta = 0
         for i in range(12):
             while(theta < a):
@@ -43,20 +46,22 @@ def sin(a):  #a是弧度
         else:
             return (y/math.sqrt((x*x+y*y)))
 
-
+# ans = sin(-3)
+# ans1 = sin(3)
+# print(ans, ans1)
 
 # def test(angle):
-#     mySin = sin(angle)           
-#     systemSin = math.sin(angle)  
+#     mySin = sin(angle)
+#     systemSin = math.sin(angle)
 #
-#     minus = systemSin - mySin    
+#     minus = systemSin - mySin
 #
 #     return minus
-
-
+#
+#
 # for i in range(100):
-#     angleIn = random.uniform(0, 100) 
-#     ans = test(angleIn)              
+#     angleIn = random.uniform(-100, 100)
+#     ans = test(angleIn)
 #     flag = True
 #     if ans > 0.001:
 #         flag = False
