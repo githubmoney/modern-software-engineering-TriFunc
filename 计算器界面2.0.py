@@ -2,7 +2,11 @@ import tkinter as tk
 import tkinter.messagebox
 import re
 # import math
-from functions import *
+from Func_Arcsin import *
+from Func_Arctan import *
+from Func_Cos import *
+from Func_Sin import *
+from Func_Angle2Radian import *
 root = tk.Tk()
 root.minsize(300, 400)      # 窗口大小300*400
 root.resizable(0, 0)
@@ -119,12 +123,12 @@ def buttonClick1(btn):
                     if '.' in exchange:
                         exchange = re.search("\-?\d+\.\d+", exchange)
                         value = exchange.group()
-                        value = str(sin_t(float(value)))
+                        value = str(sin(float(value)))
                         content = content.replace(exchange1, value)
                     else:
                         exchange = re.search("\-?\d+", exchange)
                         value = exchange.group()
-                        value = str(sin_t(float(value)))
+                        value = str(sin(float(value)))
                         content = content.replace(exchange1, value)
             strcos = r'cos\(\d+\)|cos\(\-?\d+\.\d+\)'
             if 'cos' in content:
@@ -135,12 +139,12 @@ def buttonClick1(btn):
                     if '.' in exchange:
                         exchange = re.search("\-?\d+\.\d+", exchange)
                         value = exchange.group()
-                        value = str(cos_t(float(value)))
+                        value = str(cos(float(value)))
                         content = content.replace(exchange1, value)
                     else:
                         exchange = re.search("\-?\d+", exchange)
                         value = exchange.group()
-                        value = str(cos_t(float(value)))
+                        value = str(cos(float(value)))
                         content = content.replace(exchange1, value)
             strarcsine = r'arcsine\(\d+\)|arcsine\(\-?\d+\.\d+\)'
             if 'arcsine' in content:
@@ -151,12 +155,12 @@ def buttonClick1(btn):
                     if '.' in exchange:
                         exchange = re.search("\-?\d+\.\d+", exchange)
                         value = exchange.group()
-                        value = str(arcsine_t(float(value)))
+                        value = str(arcsinx(float(value)))
                         content = content.replace(exchange1, value)
                     else:
                         exchange = re.search("\-?\d+", exchange)
                         value = exchange.group()
-                        value = str(arcsine_t(float(value)))
+                        value = str(arcsinx(float(value)))
                         content = content.replace(exchange1, value)
             strarctan = r'arctan\(\-?\d+\)|arctan\(\-?\d+\.\d+\)'
             if 'arctan' in content:
@@ -167,12 +171,12 @@ def buttonClick1(btn):
                     if '.' in exchange:
                         exchange = re.search("\-?\d+\.\d+", exchange)
                         value = exchange.group()
-                        value = str(arctan_t(float(value)))
+                        value = str(arctan(float(value)))
                         content = content.replace(exchange1, value)
                     else:
                         exchange = re.search("\-?\d+", exchange)
                         value = exchange.group()
-                        value = str(arctan_t(float(value)))
+                        value = str(arctan(float(value)))
                         content = content.replace(exchange1, value)
             value = eval(content)
             content = str(round(value, 10))
@@ -185,7 +189,7 @@ def buttonClick1(btn):
             return
         content += btn
     elif btn == 'rad':
-        content = str(radian(float(content)))+'rad'
+        content = str(angle2radian(float(content)))+'rad'
     elif btn == 'π':
         content += '3.1415926535'
     elif btn == 'sin':
