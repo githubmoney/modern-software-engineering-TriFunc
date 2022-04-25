@@ -37,8 +37,8 @@
 
 
 ## Display
-* 对应整个显示模块,使用PyQt进行开发
-* ![image](https://user-images.githubusercontent.com/57553584/160834662-907762d2-21c2-4842-a074-d413037c45d0.png)
+* 对应整个显示模块,使用tkinter进行开发
+* ![image](https://github.com/githubmoney/modern-software-engineering-TriFunc/blob/main/Snipaste_2022-04-25_19-19-38.png)
 
 
 ## 角度转弧度函数
