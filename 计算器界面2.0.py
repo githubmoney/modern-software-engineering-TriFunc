@@ -178,6 +178,22 @@ def buttonClick1(btn):
                         value = exchange.group()
                         value = str(arctan(float(value)))
                         content = content.replace(exchange1, value)
+            strrad = r'rad\(\-?\d+\)|rad\(\-?\d+\.\d+\)'
+            if 'rad' in content:
+                m = re.search(strrad, content)
+                if m is not None:
+                    exchange = m.group()
+                    exchange1 = exchange
+                    if '.' in exchange:
+                        exchange = re.search("\-?\d+\.\d+", exchange)
+                        value = exchange.group()
+                        value = str(angle2radian(float(value)))
+                        content = content.replace(exchange1, value)
+                    else:
+                        exchange = re.search("\-?\d+", exchange)
+                        value = exchange.group()
+                        value = str(angle2radian(float(value)))
+                        content = content.replace(exchange1, value)
             value = eval(content)
             content = str(round(value, 10))
         except ZeroDivisionError:
@@ -189,17 +205,17 @@ def buttonClick1(btn):
             return
         content += btn
     elif btn == 'rad':
-        content = str(angle2radian(float(content)))+'rad'
+        content += 'rad'
     elif btn == 'π':
-        content += '3.1415926535'
+        content += '3.1415926535897932'
     elif btn == 'sin':
-        content += 'sin('
+        content += 'sin'
     elif btn == 'cos':
-        content += 'cos('
+        content += 'cos'
     elif btn == 'arcsine':
-        content += 'arcsine('
+        content += 'arcsine'
     elif btn == 'arctan':
-        content += 'arctan('
+        content += 'arctan'
     elif btn == '←':  # 如果按下的是退格‘’，则选取当前数字第一位到倒数第二位
         content = content[0:-1]
     contentVar.set(content)
