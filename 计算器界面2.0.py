@@ -209,13 +209,13 @@ def buttonClick1(btn):
     elif btn == 'π':
         content += '3.1415926535897932'
     elif btn == 'sin':
-        content += 'sin'
+        content += 'sin('
     elif btn == 'cos':
-        content += 'cos'
+        content += 'cos('
     elif btn == 'arcsine':
-        content += 'arcsine'
+        content += 'arcsine('
     elif btn == 'arctan':
-        content += 'arctan'
+        content += 'arctan('
     elif btn == '←':  # 如果按下的是退格‘’，则选取当前数字第一位到倒数第二位
         content = content[0:-1]
     contentVar.set(content)
