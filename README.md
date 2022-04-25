@@ -78,9 +78,11 @@
 * 函数实现思想是通过泰勒公式展开，在一定的取值范围内进行收敛;
 * 结果保留小数点后９位;
 * 测试函数予以验证是否满足精度要求(满足要求返回值为True,否则为False).
+* 经测试，当循环取到100000000时，arctan(1)无法得出结果。
+* 上传Func_Arctanx2.0，将循环次数更改为1000000次
 * 测试结果：
-* ![arctan](https://user-images.githubusercontent.com/101334907/161008237-31feb11b-7a63-4c36-952c-3f18b076a3b2.png)
-
+* ![arctan(1)](https://github.com/yanghaan/picture/blob/main/1.png)
+* ![arctan](https://github.com/yanghaan/picture/blob/main/2.png)
   
 
 
