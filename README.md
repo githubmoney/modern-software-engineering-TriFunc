@@ -80,9 +80,7 @@
 * 结果保留小数点后９位;
 * 测试函数予以验证是否满足精度要求(满足要求返回值为True,否则为False).
 * 经测试，当循环取到100000000时，arctan(1)无法得出结果。
-* 上传Func_Arctanx2.0，将循环次数更改为1000000次
 * 测试结果：
-* ![arctan(1)](https://github.com/yanghaan/picture/blob/main/1.png)
 * ![arctan](https://github.com/yanghaan/picture/blob/main/2.png)
   
 
