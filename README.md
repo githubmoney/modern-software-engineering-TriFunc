@@ -37,6 +37,7 @@
 
 ## Display
 * 对应整个显示模块,使用tkinter进行开发
+* 界面内采用单独按键表示四组封装后的函数，同时数字按键界面可以采用角度值输入和弧度制输入，具体设计细节在后续内容展示。
 * ![image](https://github.com/githubmoney/modern-software-engineering-TriFunc/blob/main/Snipaste_2022-04-25_19-19-38.png)
 
 
